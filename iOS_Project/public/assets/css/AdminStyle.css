@@ -1,0 +1,245 @@
+﻿.dashbord-text-teal {
+    text-shadow: 1px 1px #39cccc !important;
+}
+
+.dashbord-text-olive {
+    text-shadow: 1px 1px #3d9970 !important;
+}
+
+.dashbord-text-purple {
+    text-shadow: 1px 1px #605ca8 !important;
+}
+
+.dashbord-text-maroon {
+    text-shadow: 1px 1px #d81b60 !important;
+}
+
+.dashbord-text-red {
+    text-shadow: 1px 1px #dd4b39 !important;
+}
+
+.dashbord-text-aqua {
+    text-shadow: 1px 1px #00c0ef !important;
+}
+
+.dashbord-text-yellow {
+    text-shadow: 1px 1px #f39c12 !important;
+}
+
+.h1-text-shadow {
+    text-shadow: 1px 1px #3C8DBC !important;
+}
+
+.widget-user-2 .widget-user-header {
+    padding: 20px;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+.widget-user-2 .widget-user-image>img {
+    width: 65px;
+    height: auto;
+    float: left;
+}
+
+.widget-user-2 .widget-user-username, .widget-user-2 .widget-user-desc {
+    margin-left: 75px;
+}
+.widget-user-2 .widget-user-username {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 25px;
+    font-weight: 300;
+}
+.input-group-addon{
+    background: #F4F4F4 !important;
+}
+ul.sidebar-menu {
+    padding-top: 50px;
+}
+
+.color_red{
+    background-color: #ffdbdb;
+}
+
+.color_green{    
+    background-color: #b8eab8;
+}
+.treeview .nav li a:hover,
+.treeview .nav li a:active {
+    background: transparent;
+}
+
+
+.colorred {
+    color:red;
+}
+.colorgreen {
+    color:#27A027;
+}
+.colorblack {
+    color:black;
+}
+
+/*breadcrumbs-alt*/
+.breadcrumbs-alt {
+    list-style-type: none;
+    margin: 0px 0 20px;
+    overflow: hidden;
+    padding: 0;
+    width: 100%;
+}
+
+.breadcrumbs-alt li {
+    float: left;
+    margin: 0 25px 0 0;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.breadcrumbs-alt a:before {
+    border-color: #E0E1E7 #E0E1E7 #E0E1E7 rgba(0,0,0,0);
+    border-style: solid;
+    border-width: 1.5em 0 1.7em 1em;
+    content: "";
+    left: -1em;
+    margin-top: -1.6em;
+    position: absolute;
+    top: 50%;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.breadcrumbs-alt a:after {
+    border-bottom: 1.5em solid rgba(0,0,0,0);
+    border-left: 1em solid #E0E1E7;
+    border-top: 1.5em solid rgba(0,0,0,0);
+    content: "";
+    margin-top: -1.5em;
+    position: absolute;
+    right: -1em;
+    top: 50%;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.breadcrumbs-alt a {
+    background: #E0E1E7;
+    color: #444444;
+    float: left;
+    font-size: 12px;
+    padding: 10px;
+    position: relative;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out 0s;
+}
+/*active and hover*/
+.breadcrumbs-alt a:hover:before, .breadcrumbs-alt a.current:before {
+    border-color: #1FB5AD #1FB5AD #1FB5AD rgba(0,0,0,0);
+    border-style: solid;
+    border-width: 1.5em 0 1.7em 1em;
+    content: "";
+    left: -1em;
+    margin-top: -1.6em;
+    position: absolute;
+    top: 50%;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.breadcrumbs-alt a:hover:after, .breadcrumbs-alt a.current:after {
+    border-bottom: 1.5em solid rgba(0,0,0,0);
+    border-left: 1em solid #1FB5AD;
+    border-top: 1.5em solid rgba(0,0,0,0);
+    content: "";
+    margin-top: -1.5em;
+    position: absolute;
+    right: -1em;
+    top: 50%;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.breadcrumbs-alt a:hover, .breadcrumbs-alt a.current {
+    background: #1FB5AD;
+    color: #fff;
+    float: left;
+    font-size: 12px;
+    padding: 10px;
+    position: relative;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.rating {
+    color: #a9a9a9;
+    margin: 0;
+    padding: 0;
+}
+ul.rating {
+    display: inline-block;
+}
+.rating li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 1px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    font-size:20px;
+}
+.rating .filled {
+    color: orangered;
+}
+.clear{
+    margin-top:20px;
+}
+/*.col-md-12{
+    width: 96%;
+}
+.col-xs-12{
+    width: 96%;
+}*/
+
+/*
+*
+ * The dnd-list should always have a min-height,
+ * otherwise you can't drop to it once it's empty
+ 
+.simpleDemo ul[dnd-list] {
+    min-height: 42px;
+    padding-left: 0px;
+}
+
+*
+ * The dndDraggingSource class will be applied to
+ * the source element of a drag operation. It makes
+ * sense to hide it to give the user the feeling
+ * that he's actually moving it.
+ 
+.simpleDemo ul[dnd-list] .dndDraggingSource {
+    display: none;
+}
+
+*
+ * An element with .dndPlaceholder class will be
+ * added to the dnd-list while the user is dragging
+ * over it.
+ 
+.simpleDemo ul[dnd-list] .dndPlaceholder {
+    background-color: #ddd;
+    display: block;
+    min-height: 42px;
+}
+
+.simpleDemo ul[dnd-list] li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+}
+
+*
+ * Show selected elements in green
+ 
+.simpleDemo ul[dnd-list] li.selected {
+    background-color: #dff0d8;
+    color: #3c763d;
+}*/

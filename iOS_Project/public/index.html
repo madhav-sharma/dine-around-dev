@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="2016">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<base href="/">-->
+
+        <!--<link rel="shortcut icon" href="assets/images/app_icon.png">-->
+        <title>Demo</title>
+        <!--Core CSS -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="assets/css/bootstrap-reset.css" rel="stylesheet">
+        <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="assets/js/angular-xeditable/css/xeditable.css" rel="stylesheet" />
+        <!--Ui-Block CSS-->
+        <link href="assets/js/angular-block-ui/dist/angular-block-ui.min.css" rel="stylesheet">
+
+        <!--Select 2-->
+        <link href="bower_components/angular-ui-select/dist/select.min.css" rel="stylesheet" type="text/css"/>
+        <link href="bower_components/nya-bootstrap-select/dist/css/nya-bs-select.min.css" rel="stylesheet" type="text/css"/>
+
+        <!-- Custom styles for Notification -->
+        <link href="assets/css/ns-default.css" rel="stylesheet" />
+        <link href="assets/css/ns-style-attached.css" rel="stylesheet" />
+
+        <!--Responsive side bar-->
+        <link href="assets/css/simple-sidebar.css" rel="stylesheet" />
+        <link href="assets/css/AdminLTE.min.css" rel="stylesheet" />
+        <link href="assets/css/_all-skins.min.css" rel="stylesheet" />
+        <link href="assets/css/AdminStyle.css" rel="stylesheet" />
+        <!--<link href="assets/angular-flash.min.css" rel="stylesheet" />-->
+    </head>
+    <body ng-controller="AppCtrl" style="margin-top: 0px !important; background-color: #ecf0f5;" 
+          class="" ng-class="pending ? 'skin-red' : 'skin - purple'">
+
+        <!--  -->
+
+        <section ng-if="!isNotLogin" id="container" ui-view="">
+        </section>
+        <div ng-if="isNotLogin" id="container" ui-view="">
+
+        </div>
+
+        <!-- jquery Js -->
+        <script src="assets/js/jquery.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="bower_components/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+        <script src="assets/bs3/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+        <script src="assets/js/jquery.nicescroll.js"></script>
+
+
+        <!-- Notification Js -->
+        <script src="assets/js/modernizr.custom.js"></script>
+        <script src="assets/js/classie.js"></script>
+        <script src="assets/js/notificationFx.js"></script>
+
+        <!-- Angular Libraries -->
+        <script src="assets/js/angular/angular.min.js"></script>
+        <script src="assets/js/angular/angular-cookies.min.js"></script>
+        <script src="assets/js/angular/angular-route.js"></script>
+        <script src="assets/js/angular/angular-route.min.js"></script>
+        <script src="assets/js/angular-ui-router.js"></script>
+
+        <!--Firebase js-->
+        <script src="bower_components/firebase/firebase-app.js" type="text/javascript"></script>
+        <script src="bower_components/firebase/firebase-auth.js" type="text/javascript"></script>
+        <script src="bower_components/firebase/firebase-database.js" type="text/javascript"></script>
+        <script src="bower_components/firebase/firebase-messaging.js" type="text/javascript"></script>
+        <script src="bower_components/firebase/firebase-storage.js" type="text/javascript"></script>
+
+        <!--angular fire js-->
+        <script src="bower_components/angularfire/dist/angularfire.min.js" type="text/javascript"></script>
+
+        <!--<script src="assets/js/ui-router/angular-ui-router.min.js"></script>-->
+
+
+        <script src="assets/js/angular-xeditable/js/xeditable.min.js"></script>
+        <!--<script src="assets/angular-flash.min.js"></script>-->
+        <!--Ui Select 2-->
+        <script src="bower_components/angular-ui-select/dist/select.min.js" type="text/javascript"></script>
+
+        <script src="bower_components/nya-bootstrap-select/dist/js/nya-bs-select.min.js" type="text/javascript"></script>
+
+        <!-- Angular ui bootstrap-->
+        <script src="assets/js/angular-bootstrap/ui-bootstrap.min.js"></script>
+        <script src="assets/js/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+        <!--Ui-Block CSS-->
+        <script src="assets/js/angular-block-ui/dist/angular-block-ui.min.js"></script>
+        <script src="assets/js/underscore/underscore-min.js"></script>
+        <script src="assets/js/scripts.js"></script>
+
+        <!--Order By List-->
+        <script src="bower_components/angular-ui-sortable/sortable.js" type="text/javascript"></script>
+
+        <script src="assets/tableToExcel.js"></script>
+        <!--Angular Image Upload in Base64 Directive-->
+        <script src="assets/js/imageupload.js"></script>
+        <!--Moment Js-->
+        <script src="assets/js/moment.js"></script>
+        <!-- Auth Controller -->
+        <script src="partials/app/directive.js"></script>
+        <script src="partials/app/filter.js"></script>
+        <script src="partials/app/constants.js"></script>
+
+        <script src="assets/js/scripts.js" type="text/javascript"></script>
+
+        <script src="app.js" type="text/javascript"></script>
+        <script src="partials/restaurant/restaurant.js" type="text/javascript"></script>
+
+        <!--<script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>-->
+        <script>
+                    const config = {
+                        apiKey: "AIzaSyCv3_4XVnX-UKz_ZHqteC_2xHlHKSDG-Cc",
+                        authDomain: "dine-around-test.firebaseapp.com",
+                        databaseURL: "https://dine-around-test.firebaseio.com",
+                        projectId: "dine-around-test",
+                        storageBucket: "dine-around-test.appspot.com",
+                        messagingSenderId: "60375564673"
+                    };
+                      
+                    firebase.initializeApp(config);
+
+                    var storage = firebase.storage();
+        </script>
+    </body>
+</html>

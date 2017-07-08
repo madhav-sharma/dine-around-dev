@@ -1,0 +1,229 @@
+{
+  "locations" : {
+    "-Klzaq7W50XnLrgzINJT" : {
+      "address" : "street 108",
+      "city" : "Ann Arbor",
+      "cost" : 5,
+      "coupons" : [ {
+        "code" : "123123",
+        "name" : "Web",
+        "price" : 5
+      }, {
+        "code" : "",
+        "name" : "",
+        "price" : ""
+      } ],
+      "cuisines" : "American",
+      "entree_cost" : 5,
+      "hours" : "Mon: 10:00 ~ 22:00",
+      "location" : "setset",
+      "logo_image" : "124.jpg",
+      "menu_image" : "129.jpg",
+      "name" : "test",
+      "phone" : "123123123",
+      "pictures" : [ "20170607024721_0_pic.jpg", "20170607024721_1_pic.jpg" ],
+      "state" : "MI",
+      "url" : "google.com"
+    },
+    "-Klzo7mKDKTHrLY9pWTH" : {
+      "address" : "120 Street",
+      "city" : "Ann Arbor",
+      "cost" : 5,
+      "coupons" : [ {
+        "code" : "123456",
+        "name" : "wine",
+        "price" : 5
+      } ],
+      "cuisines" : "Mexican",
+      "hours" : "Mon: 12:00~20:00\nTue: 12:00~20:00",
+      "logo_image" : "20170607024953_logo.jpg",
+      "menu_image" : "20170607024953_menu.jpg",
+      "name" : "Test123",
+      "phone" : "123456123",
+      "pictures" : [ "20170607024953_0_pic.jpg", "20170607024953_1_pic.jpg" ],
+      "state" : "MI",
+      "url" : "yahoo.com"
+    },
+    "-Km0GlHXoQ2iD1IIGoq9" : {
+      "address" : "330 East Liberty",
+      "city" : "Ann Arbor",
+      "cost" : 10,
+      "coupons" : [ {
+        "code" : "123456",
+        "name" : "offer A",
+        "price" : 1
+      }, {
+        "code" : "234567",
+        "name" : "offer B",
+        "price" : 2
+      } ],
+      "cuisines" : "Mexican",
+      "description" : "this is a demo description of a fake restaurant",
+      "hours" : "TEST HOURS\nTEST HOURS",
+      "logo_image" : "20170607063858_logo.jpg",
+      "menu_image" : "20170607063858_menu.jpg",
+      "name" : "DemoTest0",
+      "phone" : "987654321",
+      "pictures" : [ "20170607063858_0_pic.jpg" ],
+      "state" : "MI",
+      "url" : "yahoo.com"
+    },
+    "location1" : {
+      "address" : "113 E Liberty St",
+      "city" : "Ann Arbor",
+      "coupons" : [ {
+        "code" : 246800,
+        "name" : "menu2",
+        "price" : 6
+      }, {
+        "code" : 135900,
+        "name" : "menu-1",
+        "price" : 10
+      } ],
+      "createAt" : "05-16",
+      "cuisines" : "American",
+      "description" : "The restaurant is okay",
+      "entree_cost" : 30,
+      "feature" : "creditcard,wheelchair",
+      "hours" : "Mon\t11:00 am - 3:00 pm, 5:00 pm - 10:00 pm\nTue\tClosed\nWed\t11:00 am - 3:00 pm, 5:00 pm - 10:00 pm\nThu\t11:00 am - 3:00 pm, 5:00 pm - 10:00 pm\nFri\t11:00 am - 3:00 pm, 5:00 pm - 11:00 pm\nSat\t11:00 am - 3:00 pm, 5:00 pm - 11:00 pm\nSun\t11:00 am - 3:00 pm, 5:00 pm - 10:00 pm",
+      "id" : 1,
+      "latitude" : 42.2796619222548,
+      "logo_image" : "location1_logo.jpg",
+      "longitude" : -83.7478985264897,
+      "menu_image" : "location1_menu.jpg",
+      "name" : "Spencer",
+      "phone" : "(734) 369-3979",
+      "pictures" : [ "location1_img3.jpg", "location1_img1.jpg", "location1_img2.jpg" ],
+      "postal" : "48104",
+      "state" : "MI",
+      "url" : "spencerannarbor.com"
+    },
+    "locations" : {
+      "address" : "121 W Washington St",
+      "city" : "Ann Arbor",
+      "coupons" : [ {
+        "code" : 234567,
+        "name" : "pizza1",
+        "price" : 5
+      }, {
+        "code" : 123123,
+        "name" : "wine",
+        "price" : 7.5
+      } ],
+      "createAt" : "09-16",
+      "cuisines" : "Mexican",
+      "description" : "Thanks",
+      "entree_cost" : 45,
+      "feature" : "creditcard,wheelchair",
+      "hours" : "Mon\t11:00 am - 3:00 pm, 5:00 pm - 10:00 pm\nTue        11:00 am - 3:00 pm, 5:00 pm - 10:00 pm\nWed\t11:00 am - 3:00 pm, 5:00 pm - 10:00 pm\nThu\t11:00 am - 3:00 pm, 5:00 pm - 10:00 pm\nFri\t11:00 am - 3:00 pm, 5:00 pm - 11:00 pm\nSat\t11:00 am - 3:00 pm, 5:00 pm - 11:00 pm\nSun\t11:00 am - 3:00 pm, 5:00 pm - 10:00 pm",
+      "id" : 2,
+      "latitude" : 42.2804539650679,
+      "logo_image" : "locations_img4.jpg",
+      "longitude" : -83.7489107251167,
+      "menu_image" : "locations_menu.jpg",
+      "name" : "The Earle",
+      "phone" : "+17349940211",
+      "pictures" : [ "locations_img1.jpg", "locations_img2.jpg", "locations_img3.jpg" ],
+      "postal" : "48104",
+      "state" : "MI",
+      "url" : "theearle.com"
+    }
+  },
+  "purchases" : {
+    "-Kl_OcKmQsq1gBu5WY1X" : {
+      "couponIndex" : 2,
+      "couponName" : "menu-2",
+      "couponPrice" : 8.5,
+      "date" : "06/01/17 20:56",
+      "locationId" : 1,
+      "locationKey" : "location1",
+      "locationName" : "Spencer",
+      "userKey" : "test1",
+      "userPhone" : "1234567890"
+    },
+    "-Kl_Q9tWqE7s--FK0Af_" : {
+      "couponIndex" : 1,
+      "couponName" : "menu-1",
+      "couponPrice" : 10,
+      "date" : "06/01/17 20:40",
+      "locationId" : 1,
+      "locationKey" : "location1",
+      "locationName" : "Spencer",
+      "userKey" : "test1",
+      "userPhone" : "1234567890"
+    },
+    "-Kl_Qe3wBL1_jyBaMMPR" : {
+      "couponIndex" : 2,
+      "couponName" : "pizza2",
+      "couponPrice" : 5,
+      "date" : "06/01/17 20:48",
+      "locationId" : 2,
+      "locationKey" : "locations",
+      "locationName" : "The Earle",
+      "userKey" : "test1",
+      "userPhone" : "1234567890"
+    },
+    "-Km0ErPElQb8YRbARIOZ" : {
+      "couponIndex" : 1,
+      "couponName" : "pizza1",
+      "couponPrice" : 5,
+      "date" : "06/07/17 06:39",
+      "locationId" : 2,
+      "locationKey" : "locations",
+      "locationName" : "The Earle",
+      "userKey" : "test1",
+      "userPhone" : "123456789"
+    },
+    "-Km2i1Pc5LJ7pA6wS9bD" : {
+      "couponIndex" : 1,
+      "couponName" : "Web",
+      "couponPrice" : 5,
+      "date" : "06/07/17 18:43",
+      "locationId" : 0,
+      "locationKey" : "-Klzaq7W50XnLrgzINJT",
+      "locationName" : "test",
+      "userKey" : "test1",
+      "userPhone" : "123456789"
+    },
+    "-Km2mFcO4QzMQZeafLlM" : {
+      "couponIndex" : 1,
+      "couponName" : "menu2",
+      "couponPrice" : 6,
+      "date" : "06/07/17 18:09",
+      "locationId" : 1,
+      "locationKey" : "location1",
+      "locationName" : "Spencer",
+      "userKey" : "RSb1E3sfwyOmsAE9yS7ZoUOk6Nz1",
+      "userPhone" : "+16309626165"
+    },
+    "-Km_BNqRnx6t4KVNOw5L" : {
+      "couponIndex" : 1,
+      "couponName" : "menu2",
+      "couponPrice" : 6,
+      "date" : "06/14/17 06:47",
+      "locationId" : 1,
+      "locationKey" : "location1",
+      "locationName" : "Spencer",
+      "userKey" : "N8vtITf7SJWfJRVCwhKvvHaCZfv1",
+      "userPhone" : "+12487591465"
+    }
+  },
+  "users" : {
+    "N8vtITf7SJWfJRVCwhKvvHaCZfv1" : {
+      "createdAt" : "06/08/2017 03:00",
+      "email" : "",
+      "name" : "happy day",
+      "password" : "livedemo0",
+      "phone" : "+12487591465",
+      "provider" : "Firebase"
+    },
+    "RSb1E3sfwyOmsAE9yS7ZoUOk6Nz1" : {
+      "createdAt" : "06/07/2017 17:21",
+      "email" : "",
+      "name" : "Anay Katyal",
+      "password" : "Kingfisher1337",
+      "phone" : "+16309626165",
+      "provider" : "Firebase"
+    }
+  }
+}

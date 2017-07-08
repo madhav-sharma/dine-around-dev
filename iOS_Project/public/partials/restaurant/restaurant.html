@@ -1,0 +1,65 @@
+<section class="content-header" style="padding-bottom: 15px;">
+    <h1 class="h1-text-shadow">Restaurants
+    </h1>
+</section>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="box box-primary">
+            <div class="box-header header-hover">
+                <h3 class="box-title"></h3>     
+                <div class="col-md-3 ">
+                    <label>Search By Name</label>
+                    <input type="text" class="form-control" ng-model="search" />
+                </div>    
+                <div class="box-tools">
+                    <span class="tools pull-right">
+                        <button type="button" class="btn btn-xs btn-primary" ui-sref="app.restaurant.add">New Restaurant</button>
+                    </span>                   
+                </div>
+            </div>
+            <div class="box-body table-responsive no-padding" id="Reservation">
+                <table class="table table-hover" id="reservation_table">
+                    <tr style="background-color: azure;">
+                        <th class="text-center">#</th>
+                        <th>Name</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Address</th>
+                        <th>Phone</th>
+                        <th>Website</th>
+                        <th>Cuisine</th>
+                        <th class="text-center" style="width: 130px;">Action</th>
+                    </tr>
+                    <tbody ng-repeat="i in locations| filter:{'name':  search}">
+                        <tr>
+                            <td class="text-center">{{$index + 1}}</td>
+                            <td>{{i.name}}</td>
+                            <td>{{i.city}}</td>
+                            <td>{{i.state}}</td>
+                            <td>{{i.address}}</td>
+                            <td>{{i.phone}}</td>
+                            <td>{{i.url}}</td>
+                            <td>{{i.cuisines}}</td>
+                            <!--                            <td>{{book.start_time|date:'h:mm a'}}</td>
+                                                        <td>{{book.end_time|date:'h:mm a'}}</td>-->
+                            <td class="text-center">
+                                <button type="button" class="btn btn-xs m-r-xs btn-primary" ui-sref="app.restaurant.edit({id:i.$id})"
+                                        tooltip="Edit" tooltip-placement="top">
+                                    <i class="fa fa-pencil-square-o"></i>
+                                </button>
+                                <button type="button" class="btn btn-xs m-r-xs btn-danger" 
+                                        ng-confirm-click confirmed-click="deleteFn(i,$index)" tooltip="Delete" tooltip-placement="top">
+                                    <i class="fa fa-trash-o"></i>
+                                </button>
+                            </td>
+                        </tr>                  
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ui-view></div>
+

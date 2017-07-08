@@ -1,0 +1,12 @@
+{
+  "name": "mard",
+  "private": "true",
+  "dependencies": {
+    "angular-ez-plus": "^1.2.0",
+    "firebase": "^3.6.7",
+    "angularfire": "^2.3.0",
+    "angular-ui-sortable": "^0.16.1",
+    "jquery-ui": "^1.12.1",
+    "nya-bootstrap-select": "^2.2.0"
+  }
+}

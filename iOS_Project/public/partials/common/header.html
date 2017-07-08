@@ -1,0 +1,19 @@
+<!--header start-->
+<header class="main-header header" style="position: fixed; width: 100%;">
+    <a href ui-sref="app.userdetail" class="logo back-color">
+        <!--<img src="assets/images/app_icon.png" style="width: 48px;" class="pull-left" />-->
+        <span class="logo-lg"><b>Demo</b></span>
+    </a>
+    <nav class="navbar navbar-static-top" role="navigation">
+        <a class="sidebar-toggle" href="#menu-toggle" id="menu-toggle"></a>      
+    </nav>
+</header>
+
+<div flash-message="3000" class="pull-right" style="width: 300px"></div>
+
+<script>
+    $("#menu-toggle").click(function (e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>
