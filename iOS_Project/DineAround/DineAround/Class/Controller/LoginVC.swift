@@ -35,8 +35,12 @@ class LoginVC: UIViewController {
     
     @IBAction func actionLogin(_ sender: UIButton) {
         
+        
+        
         if isValidItems() == true {
             SwiftLoader.show(animated: true)
+            
+            
             
             ApiManager.shared .userLogin(phoneNumber: phoneField.text!, password: passwordField.text!) { (result) in
                 SwiftLoader.hide()

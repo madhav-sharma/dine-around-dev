@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>60375564673-qluitkj9hm4f5st9l6uvao7stud6hiuu.apps.googleusercontent.com</string>
+	<string>1054088997678-s26llrtag6p2pisn2v0degorlcqm4v9d.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.60375564673-qluitkj9hm4f5st9l6uvao7stud6hiuu</string>
+	<string>com.googleusercontent.apps.1054088997678-s26llrtag6p2pisn2v0degorlcqm4v9d</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDN9picJ3fzxop3gojGHHkqfc4v_5sisMA</string>
+	<string>AIzaSyANMhFUflQjYH6XbldKormZPPsvWF9JWSw</string>
 	<key>GCM_SENDER_ID</key>
-	<string>60375564673</string>
+	<string>1054088997678</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.madhav.dine</string>
 	<key>PROJECT_ID</key>
-	<string>dine-around-test</string>
+	<string>dine-49174</string>
 	<key>STORAGE_BUCKET</key>
-	<string>dine-around-test.appspot.com</string>
+	<string>dine-49174.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:60375564673:ios:0924ee21ea219042</string>
+	<string>1:1054088997678:ios:0ba8d550937fa2cb</string>
 	<key>DATABASE_URL</key>
-	<string>https://dine-around-test.firebaseio.com</string>
+	<string>https://dine-49174.firebaseio.com</string>
 </dict>
 </plist>

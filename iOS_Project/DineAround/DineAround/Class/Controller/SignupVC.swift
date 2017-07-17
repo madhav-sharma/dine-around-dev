@@ -82,7 +82,7 @@ class SignupVC: UIViewController {
 //            }
         }
         
-        if (emailField.text != "" && isValid(email: emailField.text) == false) {
+        if (isValid(email: emailField.text) == false) {
             self.showAlert(title: "", message: "Invalid email address", withField: emailField)
             return false
         }

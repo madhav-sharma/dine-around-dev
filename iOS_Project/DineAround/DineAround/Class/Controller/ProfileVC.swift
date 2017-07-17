@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ProfileVC: UIViewController {
 
@@ -37,7 +38,7 @@ class ProfileVC: UIViewController {
         
         priceLabel.text = "$0.0"
         //self.testLocation()
-
+        
         selectTab(index: 1)
 
     }
@@ -51,6 +52,7 @@ class ProfileVC: UIViewController {
         if UserInfo.shared.isLogin {
             nameLabel.text = UserInfo.shared.name
             phoneLabel.text = UserInfo.shared.phone
+            
             
             DispatchQueue.main.async {
                 self.getPurchaseInfo()

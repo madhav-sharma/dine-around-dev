@@ -133,7 +133,7 @@ class ApiManager {
     }
     
     func userSignup(userInfo: UserInfo! = nil, completion: @escaping (String!)->()) {
-        
+        userSignOut()
         let info = userInfo ?? UserInfo.shared
         
         self.userSignup(phoneNumber: info.phone, name: info.name, email: info.email, password: info.password, completion: completion)
@@ -144,13 +144,16 @@ class ApiManager {
 //            completion(self.verifyID)
 //            return
 //        }
-        userSignOut()
+        
         
         let phone0 = makePhone(number: phoneNumber)
+        
+        print("Checkpoint 1 ran")
         
         PhoneAuthProvider.provider().verifyPhoneNumber(phone0) { (verificationID, error) in
             if error != nil {
                 print("\(String(describing: error))")
+                print("Checkpoint 2 ran")
                 completion(nil)
                 return
             }
@@ -177,7 +180,7 @@ class ApiManager {
             self.verifyCode = code
             self.save()
             
-            self.saveUserInfo(user: user)
+            //self.createNewUserAccount(user: user)
             UserInfo.shared.isLogin = true
             UserInfo.shared.save()
             
@@ -186,6 +189,17 @@ class ApiManager {
     }
     
     func userLogin(phoneNumber: String!, password: String!, completion: @escaping (Int)->()) {
+        guard let verificationID = UserDefaults.standard.value(forKey: "authID") as? String,  let verificiationCode = UserDefaults.standard.value(forKey: "authCode") as? String else { return }
+        let credential = PhoneAuthProvider.provider().credential(withVerificationID: verificationID, verificationCode: verificiationCode)
+        
+        Auth.auth().signIn(with: credential) { (user, error) in
+            if error != nil {
+                print("\(error!.localizedDescription)")
+                return
+            }
+        }
+
+        /*
         self.usrDBRef.observeSingleEvent(of: .value, with: { (snapshot) in
             for item in snapshot.children {
                 if let snap = item as? DataSnapshot,
@@ -220,16 +234,23 @@ class ApiManager {
         }) { (error) in
             print(error.localizedDescription)
             completion(-2)
-        }
+        }*/
     }
+   
     
     func userSignOut() {
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
+            UserInfo.shared.isLogin = false
+            UserInfo.shared.save()
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
+    }
+    
+    func returnToHomeAfterSignOut(vc: UIViewController){
+        vc.performSegue(withIdentifier: "goHome", sender: nil)
     }
     
     func userChange(oldPassword: String!, toNewPassword newPass: String!, completion: @escaping (Int)->()) {
@@ -571,13 +592,25 @@ class ApiManager {
                         
                         let result = search.businesses.sorted(by: { (item1, item2) -> Bool in
                           
-                            let coord1 = CLLocationCoordinate2DMake((item1.location.coordinate?.latitude)!, (item1.location.coordinate?.longitude)!)
-                            let coord2 = CLLocationCoordinate2DMake((item2.location.coordinate?.latitude)!, (item2.location.coordinate?.longitude)!)
+                            
+                            let item1C:(lat: Double?, long: Double?) = ((item1.location.coordinate?.latitude), (item1.location.coordinate?.longitude))
+                            let item2C:(lat: Double?, long: Double?) = ((item2.location.coordinate?.latitude), (item2.location.coordinate?.longitude))
+                        
+                            guard let lat1 = item1C.lat, let long1 = item1C.long, let lat2 = item2C.lat, let long2 = item2C.long else { return false }
+                            
+                            let coord1 = CLLocationCoordinate2DMake(lat1, long1)
+                            
+                            let coord2 = CLLocationCoordinate2DMake(lat2, long2)
+                                
                             
                             let dist1 = Location.getDistance(with: location.coordinate, and: coord1)
+                            
                             let dist2 = Location.getDistance(with: location.coordinate, and: coord2)
+                                
                             
                             return dist1 < dist2
+                        
+                            
                         })
                         
                         var found = false
@@ -590,7 +623,9 @@ class ApiManager {
                                 print("\(cat.name) - \(cat.alias)")
                             }
                             
-                            let coord = CLLocationCoordinate2DMake((item.location.coordinate?.latitude)!, (item.location.coordinate?.longitude)!)
+                            guard let lat = (item.location.coordinate?.latitude), let long = (item.location.coordinate?.longitude) else { return }
+                            
+                            let coord = CLLocationCoordinate2DMake(lat, long)
                             let dist = Location.getDistance(with: location.coordinate, and: coord)
                             
                             print("dist = \(dist)")
@@ -659,17 +694,34 @@ class ApiManager {
         }).resume()
     }
     
-    // save User into firebase
+    // create User
+    func createNewUserAccount(user: User!){
+        if let user = user{
+            let userInfo = UserInfo.shared
+            userInfo.key = user.uid
+            
+            Auth.auth().createUser(withEmail: userInfo.email, password: userInfo.password, completion: { (user, error) in
+                if error != nil{
+                    print(error?.localizedDescription ?? "An error occured trying to create a new user")
+                }
+            })
+        } else {
+            print("user is nil")
+        }
+    }
+    /* saves a user into the databse
     func saveUserInfo(user: User!) {
         
         if let user = user {
+            let userInfo = UserInfo.shared
+            userInfo.key = user.uid
+         
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MM/dd/YYYY HH:mm"
             dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
             let dateString = dateFormatter.string(from: Date())
             
-            let userInfo = UserInfo.shared
-            userInfo.key = user.uid
+            
             
             let newUser = [
                 "phone": userInfo.phone,
@@ -687,7 +739,7 @@ class ApiManager {
             print("user is nil")
         }
 
-    }
+    }*/
 
     // add +1 if phone has not county code.
     func makePhone(number: String!) -> String {
@@ -695,6 +747,23 @@ class ApiManager {
         if phone0.contains("+") == false {
             phone0 = "+1\(phone0)"
         }
+        print(phone0)
         return phone0
+    }
+    
+    //not working
+    func getCurrentUser(){
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            if user != nil{
+                guard let user = user else {
+                    print("Error trying to unwrap the current user")
+                    return
+                }
+                print("Details:\n email: \(user.email) \n uid: \(user.uid)")
+                
+            } else{
+                print("No user is logged in")
+            }
+        }
     }
 }

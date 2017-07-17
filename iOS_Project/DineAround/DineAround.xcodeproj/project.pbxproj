@@ -41,13 +41,14 @@
 		2AB3771E1EC62D5E00CD4A9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB3771D1EC62D5E00CD4A9E /* AppDelegate.swift */; };
 		2AC59A9D1ED18D3E00CFCA16 /* ApiMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC59A9C1ED18D3E00CFCA16 /* ApiMngr.swift */; };
 		2AC59A9F1ED1CF2A00CFCA16 /* VerifyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC59A9E1ED1CF2A00CFCA16 /* VerifyVC.swift */; };
-		2AD82B3F1ED0419900CE7FB0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AD82B3E1ED0419900CE7FB0 /* GoogleService-Info.plist */; };
+		2AD82B3F1ED0419900CE7FB0 /* GoogleService-InfoOld.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AD82B3E1ED0419900CE7FB0 /* GoogleService-InfoOld.plist */; };
 		2AF26C161EDF52B500D629FA /* ForgotVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF26C151EDF52B500D629FA /* ForgotVC.swift */; };
 		2AF26C181EDF5BD000D629FA /* VerifyForgotVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF26C171EDF5BD000D629FA /* VerifyForgotVC.swift */; };
 		2AF26C1A1EDF5FA600D629FA /* ResetPassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF26C191EDF5FA600D629FA /* ResetPassVC.swift */; };
 		2AF26C1C1EDFAF1F00D629FA /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF26C1B1EDFAF1F00D629FA /* LocationController.swift */; };
 		2AF26C1E1EDFB13100D629FA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF26C1D1EDFB13100D629FA /* CoreLocation.framework */; };
 		2AF26C201EDFEE3700D629FA /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF26C1F1EDFEE3600D629FA /* Purchase.swift */; };
+		A9FB580E1F1A8C1D0079D42E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9FB580D1F1A8C1D0079D42E /* GoogleService-Info.plist */; };
 		E3A38E9497DD447D1B434CF1 /* Pods_DineAround.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E8BE85A5AD4A9E893EAE79 /* Pods_DineAround.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,7 +93,7 @@
 		2AB377201EC62E3C00CD4A9E /* DineAround-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DineAround-Bridging-Header.h"; sourceTree = "<group>"; };
 		2AC59A9C1ED18D3E00CFCA16 /* ApiMngr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiMngr.swift; sourceTree = "<group>"; };
 		2AC59A9E1ED1CF2A00CFCA16 /* VerifyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyVC.swift; sourceTree = "<group>"; };
-		2AD82B3E1ED0419900CE7FB0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2AD82B3E1ED0419900CE7FB0 /* GoogleService-InfoOld.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-InfoOld.plist"; sourceTree = "<group>"; };
 		2AF26C151EDF52B500D629FA /* ForgotVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotVC.swift; sourceTree = "<group>"; };
 		2AF26C171EDF5BD000D629FA /* VerifyForgotVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyForgotVC.swift; sourceTree = "<group>"; };
 		2AF26C191EDF5FA600D629FA /* ResetPassVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPassVC.swift; sourceTree = "<group>"; };
@@ -101,6 +102,7 @@
 		2AF26C1F1EDFEE3600D629FA /* Purchase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
 		734FD6F9CA4C04F17779C781 /* Pods-DineAround.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DineAround.release.xcconfig"; path = "Pods/Target Support Files/Pods-DineAround/Pods-DineAround.release.xcconfig"; sourceTree = "<group>"; };
 		79F6EE89850F9ED53C123A40 /* Pods-DineAround.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DineAround.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DineAround/Pods-DineAround.debug.xcconfig"; sourceTree = "<group>"; };
+		A9FB580D1F1A8C1D0079D42E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,7 +142,8 @@
 		2A021EB61EC40EFF00F2FE95 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				2AD82B3E1ED0419900CE7FB0 /* GoogleService-Info.plist */,
+				2AD82B3E1ED0419900CE7FB0 /* GoogleService-InfoOld.plist */,
+				A9FB580D1F1A8C1D0079D42E /* GoogleService-Info.plist */,
 				2A021EAF1EC40EEA00F2FE95 /* font */,
 				2A643C181EBE45E7009136CC /* Assets.xcassets */,
 				2A643C1A1EBE45E7009136CC /* LaunchScreen.storyboard */,
@@ -327,8 +330,8 @@
 				TargetAttributes = {
 					2A643C0B1EBE45E7009136CC = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 8VVVTJTK2G;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = B42TFLD83W;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -364,12 +367,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A021EB31EC40EEA00F2FE95 /* Comfortaa-Bold.ttf in Resources */,
+				A9FB580E1F1A8C1D0079D42E /* GoogleService-Info.plist in Resources */,
 				2A643C1C1EBE45E7009136CC /* LaunchScreen.storyboard in Resources */,
 				2A643C191EBE45E7009136CC /* Assets.xcassets in Resources */,
 				2A643C171EBE45E7009136CC /* Main.storyboard in Resources */,
 				2A021EB51EC40EEA00F2FE95 /* Comfortaa-Regular.ttf in Resources */,
 				2A021EB41EC40EEA00F2FE95 /* Comfortaa-Light.ttf in Resources */,
-				2AD82B3F1ED0419900CE7FB0 /* GoogleService-Info.plist in Resources */,
+				2AD82B3F1ED0419900CE7FB0 /* GoogleService-InfoOld.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,14 +589,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DineAround/DineAround.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Idris Sunmola (727Q988HKA)";
-				DEVELOPMENT_TEAM = 8VVVTJTK2G;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = B42TFLD83W;
 				INFOPLIST_FILE = DineAround/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.DineAround;
+				PRODUCT_BUNDLE_IDENTIFIER = com.madhav.dine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ddf9a568-1ee3-4322-b05b-5a832e54adcd";
-				PROVISIONING_PROFILE_SPECIFIER = dine_dev0608;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "DineAround/DineAround-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
@@ -605,14 +610,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DineAround/DineAround.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Idris Sunmola (727Q988HKA)";
-				DEVELOPMENT_TEAM = 8VVVTJTK2G;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = B42TFLD83W;
 				INFOPLIST_FILE = DineAround/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.DineAround;
+				PRODUCT_BUNDLE_IDENTIFIER = com.madhav.dine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ddf9a568-1ee3-4322-b05b-5a832e54adcd";
-				PROVISIONING_PROFILE_SPECIFIER = dine_dev0608;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "DineAround/DineAround-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};

@@ -38,8 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if g_isFirst == true {
             self.initLocal()
         }
-        
-        
+                
         return true
     }
 
@@ -65,6 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Auth.auth().setAPNSToken(deviceToken, type: AuthAPNSTokenType.sandbox)
     }
@@ -72,6 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         if (Auth.auth().canHandleNotification(userInfo)) {
             completionHandler(UIBackgroundFetchResult.noData)
+            print("Push Notifications are available")
             return
         }
     }
@@ -83,7 +84,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
             UNUserNotificationCenter.current().requestAuthorization(
                 options: authOptions,
-                completionHandler: {_, _ in })
+                completionHandler: {granted, error in
+                    print("Permission Granted: \(granted)")
+            })
+            
         } else {
             let settings: UIUserNotificationSettings =
                 UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
