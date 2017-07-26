@@ -34,25 +34,13 @@ class LoginVC: UIViewController {
     
     
     @IBAction func actionLogin(_ sender: UIButton) {
-        
-        
-        
-        if isValidItems() == true {
-            SwiftLoader.show(animated: true)
-            
-            
-            
-            ApiManager.shared .userLogin(phoneNumber: phoneField.text!, password: passwordField.text!) { (result) in
-                SwiftLoader.hide()
-                
-                if result == 0 {
-                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1, execute: {
-                        self.navigationController!.popToRootViewController(animated: true)
-                    })
-                }
-                else {
-                    self.showAlert(title: "", message: "Invalide phone or password")
-                }
+        if isValidItems() == true{
+            UserInfo.shared.phone = phoneField.text!
+            let errorVerif = ApiManager.shared.verifyPhoneFirebase(phoneNumber: UserInfo.shared.phone).error
+            if errorVerif == 1{
+                self.showAlert(title: "", message: "An error occurred trying to log in")
+            } else{
+                self.performSegue(withIdentifier: "verifyLogin", sender: nil)
             }
         }
     }
@@ -64,26 +52,13 @@ class LoginVC: UIViewController {
     
     
     func isValidItems() -> Bool {
+        var valid = true
         if (phoneField.text == "") {
             self.showAlert(title: "", message: "Please input phone number", withField: phoneField)
-            return false
-        }
-        else {
-            //            if isValid(phone: phoneField.text) == false {
-            //                self.showAlert(title: "", message: "Invalid phone number", withField: phoneField)
-            //                return false
-            //            }
+           valid = false
         }
         
-        if isPasswordLenth(password: passwordField.text) == false {
-            self.showAlert(title: "", message: "Password length should be greater than 6", withField: passwordField)
-            return false
-            
-        }
-
-
-        
-        return true
+        return valid
     }
 }
 

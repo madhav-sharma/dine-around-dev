@@ -53,7 +53,7 @@ class ProfileVC: UIViewController {
             nameLabel.text = UserInfo.shared.name
             phoneLabel.text = UserInfo.shared.phone
             
-            
+
             DispatchQueue.main.async {
                 self.getPurchaseInfo()
             }

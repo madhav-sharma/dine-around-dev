@@ -43,6 +43,7 @@ class VerifyVC: UIViewController {
             SwiftLoader.show(animated: true)
             ApiManager.shared.userCredential(code: codeStr, completion: { (errMsg) in
                 SwiftLoader.hide()
+                print("This is running")
                 if let msg = errMsg {
                     for field in self.codeFieldArray {
                         field.text = ""
@@ -50,9 +51,9 @@ class VerifyVC: UIViewController {
                     self.showAlert(title: "", message: msg)
                 }
                 else {
-                    UserInfo.shared.isLogin = true
                     self.navigationController!.popToRootViewController(animated: true)
                 }
+
             })
         }
     }

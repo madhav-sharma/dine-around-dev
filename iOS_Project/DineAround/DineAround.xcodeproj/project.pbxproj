@@ -43,7 +43,7 @@
 		2AC59A9F1ED1CF2A00CFCA16 /* VerifyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC59A9E1ED1CF2A00CFCA16 /* VerifyVC.swift */; };
 		2AD82B3F1ED0419900CE7FB0 /* GoogleService-InfoOld.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AD82B3E1ED0419900CE7FB0 /* GoogleService-InfoOld.plist */; };
 		2AF26C161EDF52B500D629FA /* ForgotVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF26C151EDF52B500D629FA /* ForgotVC.swift */; };
-		2AF26C181EDF5BD000D629FA /* VerifyForgotVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF26C171EDF5BD000D629FA /* VerifyForgotVC.swift */; };
+		2AF26C181EDF5BD000D629FA /* VerifyReconfirmLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF26C171EDF5BD000D629FA /* VerifyReconfirmLoginVC.swift */; };
 		2AF26C1A1EDF5FA600D629FA /* ResetPassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF26C191EDF5FA600D629FA /* ResetPassVC.swift */; };
 		2AF26C1C1EDFAF1F00D629FA /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF26C1B1EDFAF1F00D629FA /* LocationController.swift */; };
 		2AF26C1E1EDFB13100D629FA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF26C1D1EDFB13100D629FA /* CoreLocation.framework */; };
@@ -95,7 +95,7 @@
 		2AC59A9E1ED1CF2A00CFCA16 /* VerifyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyVC.swift; sourceTree = "<group>"; };
 		2AD82B3E1ED0419900CE7FB0 /* GoogleService-InfoOld.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-InfoOld.plist"; sourceTree = "<group>"; };
 		2AF26C151EDF52B500D629FA /* ForgotVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotVC.swift; sourceTree = "<group>"; };
-		2AF26C171EDF5BD000D629FA /* VerifyForgotVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyForgotVC.swift; sourceTree = "<group>"; };
+		2AF26C171EDF5BD000D629FA /* VerifyReconfirmLoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyReconfirmLoginVC.swift; sourceTree = "<group>"; };
 		2AF26C191EDF5FA600D629FA /* ResetPassVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPassVC.swift; sourceTree = "<group>"; };
 		2AF26C1B1EDFAF1F00D629FA /* LocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
 		2AF26C1D1EDFB13100D629FA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -162,7 +162,7 @@
 				2A643C301EBF6AA3009136CC /* SignupVC.swift */,
 				2AC59A9E1ED1CF2A00CFCA16 /* VerifyVC.swift */,
 				2AF26C151EDF52B500D629FA /* ForgotVC.swift */,
-				2AF26C171EDF5BD000D629FA /* VerifyForgotVC.swift */,
+				2AF26C171EDF5BD000D629FA /* VerifyReconfirmLoginVC.swift */,
 				2AF26C191EDF5FA600D629FA /* ResetPassVC.swift */,
 			);
 			name = User;
@@ -459,7 +459,7 @@
 				2A643C2B1EBF698C009136CC /* MainListVC.swift in Sources */,
 				2AB377121EC60EFD00CD4A9E /* InstructionVC.swift in Sources */,
 				2A6ADB791EE20B28001EA2B7 /* VerifyCouponVC.swift in Sources */,
-				2AF26C181EDF5BD000D629FA /* VerifyForgotVC.swift in Sources */,
+				2AF26C181EDF5BD000D629FA /* VerifyReconfirmLoginVC.swift in Sources */,
 				2AB377161EC61AB500CD4A9E /* MainViewCell.swift in Sources */,
 				2A021EB81EC4272C00F2FE95 /* Global.swift in Sources */,
 				2A643C321EBF6AA3009136CC /* LoginVC.swift in Sources */,

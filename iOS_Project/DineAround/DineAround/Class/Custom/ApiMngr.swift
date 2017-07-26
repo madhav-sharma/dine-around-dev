@@ -99,7 +99,7 @@ class ApiManager {
     var usrDBRef: DatabaseReference!
     var purDBRef: DatabaseReference!
     
-    //
+    
     var locationArray: [Location] = []
     var purchaseArray: [Purchase] = []
     
@@ -150,56 +150,43 @@ class ApiManager {
         
         print("Checkpoint 1 ran")
         
-        PhoneAuthProvider.provider().verifyPhoneNumber(phone0) { (verificationID, error) in
-            if error != nil {
-                print("\(String(describing: error))")
-                print("Checkpoint 2 ran")
-                completion(nil)
-                return
-            }
-            
-            print("\(String(describing: verificationID))")
-            
-            self.verifyID = verificationID
-            self.save()
-            
-            completion(verificationID)
-            return
+        let (verificationID, error) = verifyPhoneFirebase(phoneNumber: phone0)
+        
+        if error == 1{
+            print("An error occurred verifying the number")
         }
+        
+        UserInfo.shared.save()
+        
+        completion(verificationID)
+        return
     }
     
     func userCredential(code: String!, completion: @escaping (String!)->()) {
-        let phoneAuth = PhoneAuthProvider.provider().credential(withVerificationID: verifyID, verificationCode: code)
-        
-        Auth.auth().signIn(with: phoneAuth) { (user, error) in
-            if error != nil {
-                print("\(error!.localizedDescription)")
-                completion(error!.localizedDescription)
-                return
+        firebaseSignIn(code: code, isFirstTime: true) { (error) in
+            if error != nil{
+                completion(error)
+            } else {
+                completion(nil)
             }
-            self.verifyCode = code
-            self.save()
-            
-            //self.createNewUserAccount(user: user)
-            UserInfo.shared.isLogin = true
-            UserInfo.shared.save()
-            
-            completion(nil)
         }
     }
     
-    func userLogin(phoneNumber: String!, password: String!, completion: @escaping (Int)->()) {
-        guard let verificationID = UserDefaults.standard.value(forKey: "authID") as? String,  let verificiationCode = UserDefaults.standard.value(forKey: "authCode") as? String else { return }
-        let credential = PhoneAuthProvider.provider().credential(withVerificationID: verificationID, verificationCode: verificiationCode)
+    func userLogin(code: String!, completion: @escaping (Int)->()) {
+        
+         let credential = PhoneAuthProvider.provider().credential(withVerificationID: self.verifyID, verificationCode: code)
+        
+        
+
         
         Auth.auth().signIn(with: credential) { (user, error) in
             if error != nil {
                 print("\(error!.localizedDescription)")
                 return
             }
+            completion(0)
         }
-
-        /*
+        
         self.usrDBRef.observeSingleEvent(of: .value, with: { (snapshot) in
             for item in snapshot.children {
                 if let snap = item as? DataSnapshot,
@@ -207,13 +194,16 @@ class ApiManager {
                     print("\(dict)")
                     let phone = dict.value(forKey: "phone") as? String ?? ""
                     let pass = dict.value(forKey: "password") as? String ?? ""
-                
+                    
+                    print("This database ran")
+                    
+                    
                     print("\(phone) - \(pass)")
                     
-                    if phoneNumber == phone && password == pass {
+                    if UserInfo.shared.phone == phone {
                         
                         print("equals")
-                    
+                        
                         let userInfo = UserInfo.shared
                         
                         userInfo.key = snap.key
@@ -227,17 +217,60 @@ class ApiManager {
                         
                         completion(0)
                         return
+                    } else {
+                        print("Couldnt find the phone number in the databse")
                     }
                 }
             }
             completion(-1)
         }) { (error) in
-            print(error.localizedDescription)
+            print("Database error here: \(error.localizedDescription)")
             completion(-2)
-        }*/
+        }
     }
-   
     
+
+
+        
+    func verifyPhoneFirebase(phoneNumber: String!) -> (verificID: String, error: Int){
+        var errorValue = 0
+        let currentPhoneNumber = makePhone(number: phoneNumber)
+        
+        PhoneAuthProvider.provider().verifyPhoneNumber(currentPhoneNumber) { (verificationID, error) in
+            if error != nil {
+                print("\(String(describing: error))")
+                print("Checkpoint 2 ran")
+                errorValue = 1
+                return
+            }
+
+            self.verifyID = verificationID
+            self.save()
+        }
+        
+        return (self.verifyID, errorValue)
+    }
+    
+    func firebaseSignIn(code: String!, isFirstTime: Bool, completion: @escaping (String!)->()) {
+        
+        let credential = PhoneAuthProvider.provider().credential(withVerificationID: verifyID, verificationCode: code)
+        Auth.auth().signIn(with: credential) { (user, error) in
+            if error != nil {
+                print("Firebase signing in here: \(error!.localizedDescription)")
+                completion(error?.localizedDescription)
+            } else{
+                print("Running here")
+                completion(nil)
+                UserInfo.shared.isLogin = true
+                UserInfo.shared.save()
+                if isFirstTime == true {
+                    self.saveUserInfo(user: user)
+                }
+            }
+        }
+        
+    }
+
     func userSignOut() {
         let firebaseAuth = Auth.auth()
         do {
@@ -709,7 +742,7 @@ class ApiManager {
             print("user is nil")
         }
     }
-    /* saves a user into the databse
+   
     func saveUserInfo(user: User!) {
         
         if let user = user {
@@ -739,7 +772,7 @@ class ApiManager {
             print("user is nil")
         }
 
-    }*/
+    }
 
     // add +1 if phone has not county code.
     func makePhone(number: String!) -> String {

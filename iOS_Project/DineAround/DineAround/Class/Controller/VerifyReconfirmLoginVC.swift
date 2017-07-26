@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import FirebaseAuth
 
-class VerifyForgotVC: UIViewController {
+class VerifyReconfirmLoginVC: UIViewController {
 
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet var codeFieldArray: [UITextField]!
@@ -31,19 +32,24 @@ class VerifyForgotVC: UIViewController {
         }
         if let codeStr = getCodeString() {
             SwiftLoader.show(animated: true)
-            ApiManager.shared.tempCredential(code: codeStr, completion: { (errMsg) in
+            ApiManager.shared.userLogin(code: codeStr, completion: { (error) in
                 SwiftLoader.hide()
-                if let msg = errMsg {
+                if error != 0{
                     for field in self.codeFieldArray {
                         field.text = ""
                     }
-                    self.showAlert(title: "", message: msg)
+                    self.showAlert(title: "", message: "An error occurred with the verification code entered")
+                } else {
+                    
+                    Auth.auth().currentUser?.updatePassword(to: "testing", completion: { (error) in
+                        print("Look at this error \(String(describing: error))")
+                    })
+                    self.navigationController!.popToRootViewController(animated: true)
+                    
                 }
-                else {
-                    //
-                    self.performSegue(withIdentifier: "showReset", sender: self)
-                }
+
             })
+        
         }
     }
     
@@ -63,7 +69,7 @@ class VerifyForgotVC: UIViewController {
     
 }
 
-extension VerifyForgotVC: UITextFieldDelegate {
+extension VerifyReconfirmLoginVC: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         // return true if the replacementString only contains numeric characters
         if string == "" {
